@@ -1,11 +1,14 @@
 /***** ELEMENTS *****/
 var startButton = document.getElementById("start");
 var stopButton = document.getElementById("stop");
+var submitButton = document.getElementById("submit");
 var inputField = document.getElementById("in");
 var form = document.querySelector("form");
 var p = document.getElementById("p");
 var q = document.getElementById("q");
 var op = document.getElementById("op");
+var time = document.getElementById("time");
+
 var response = document.getElementById("response"); // used for Try Again text
 var results = document.getElementById("results");
 var category = document.getElementById("category");
@@ -25,6 +28,7 @@ var times = [];
 /***** INITIALIZING *****/
 inputField.className = "hide";
 stopButton.className = "hide";
+submitButton.className = "hide";
 
 /***** EVENTS *****/
 startButton.onclick = function() {
@@ -36,6 +40,7 @@ startButton.onclick = function() {
 	refreshNums();
 	inputField.className = ""; // show the input field
 	stopButton.className = ""; // show the stop button
+	submitButton.className = ""; // show the stop button
 	startButton.className = "hide"; // hide the start button
 	inputField.focus();
 };
@@ -65,6 +70,7 @@ stopButton.onclick = function() {
 
 	inputField.className = "hide"; // hide the input field
 	stopButton.className = "hide"; // hide the stop button
+	submitButton.className = "hide"; // hide the stop button
 	startButton.className = ""; // show the start button
 
 	// clear numbers and present results
@@ -109,6 +115,7 @@ var getAnswer = function() {
 	}
 	// clear the input field for the next round
 	inputField.value = "";
+	inputField.focus();
 };
 
 var getCategory = function(mean) {
